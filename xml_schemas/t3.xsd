@@ -2,8 +2,8 @@
 
 <!--
 Description	T3 Return Complex and Element Types
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -101,6 +101,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="CNTC" type="ContactType2"/>
 			<xsd:element name="tx_yr" type="yearType"/>
 			<xsd:element name="rpt_tcd" type="otherDataType"/>
+			<xsd:element name="fileramendmentnote" type="char1309Type" minOccurs="0"/>
 			<xsd:element name="slp_cnt" type="int7Type"/>
 			<xsd:element name="TR_TX_SDT" type="DateType"/>
 			<xsd:element name="TR_TX_NDT" type="DateType2"/>

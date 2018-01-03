@@ -2,8 +2,8 @@
 
 <!--
 Description	Definition of SimpleTypes
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -317,6 +317,9 @@ Version#:	1.16 (version #.yy)
 		<xsd:restriction base="xsd:string">
 			<xsd:pattern value="(\p{L}{1}[0-9]{8})"/>
 		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BNTrustType">
+			<xsd:union memberTypes="bnType trustType"/>
 	</xsd:simpleType>
 	<xsd:simpleType name="finType">
 		<xsd:restriction base="xsd:string">
@@ -662,12 +665,12 @@ Version#:	1.16 (version #.yy)
 			<xsd:maxLength value="60"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<!--xsd:simpleType name="char60EmailType">
+	<xsd:simpleType name="char1309Type">
 		<xsd:restriction base="xsd:string">
-			<xsd:pattern value="[\p{L}\p{N}\-_]+@[\p{L}\p{N}\-_]+\.\p{L}{2,4}"/>
-			<xsd:maxLength value="60"/>
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="1309"/>
 		</xsd:restriction>
-	</xsd:simpleType-->
+	</xsd:simpleType>
 	<!--                                                                                        -->
 	<!-- Indicator  definitions (1-5,1-4,0-3,0-2,1-2,1-3-4,)	 	-->
 	<!--                                                                                      	-->

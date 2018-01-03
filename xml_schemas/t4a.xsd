@@ -2,8 +2,8 @@
 
 <!--
 Description	T4A Return Complex and Element Types
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -180,6 +180,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="RPP_NBR" type="RppNumberType" minOccurs="0"/>
 			<xsd:element name="PPRTR_SIN" type="PropSinType" minOccurs="0"/>
 			<xsd:element name="rpt_tcd" type="otherDataType"/>
+			<xsd:element name="fileramendmentnote" type="char1309Type" minOccurs="0"/> 
 			<xsd:element name="T4A_TAMT" type="T4aTotalsType" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>

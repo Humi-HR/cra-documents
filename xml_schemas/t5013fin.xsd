@@ -83,7 +83,6 @@ Users of this schema:
 			<xsd:element ref="ols:MultipleJurisdictionAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:CapitalGainsAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:CapitalCostsAttachmentIndicator" minOccurs="0"/>
-			<xsd:element ref="ols:CapitalPropertyAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:ResourceDeductionsAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:ITCCalculationAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:ScientificResearchAttachmentIndicator" minOccurs="0"/>
@@ -331,7 +330,7 @@ Users of this schema:
 	<xsd:element name="DonationsAttachmentIndicator" type="ccms:OneTwoCodeType">
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en"> 
-			Has the partnership made any charitable donations, gifts to Canada, a province, or a territory, gifts of cultural or ecological property, gifts of medicine, or federal, provincial, territorial or municipal political contributions? If yes, attach schedule 2
+			Has the partnership made any charitable donations, gifts of cultural or ecological property, gifts of medicine, or federal, provincial, territorial or municipal political contributions? If yes, attach schedule 2
  		   </xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -353,13 +352,6 @@ Users of this schema:
 		<xsd:annotation>
 			<xsd:documentation xml:lang="en"> 
 			Does the partnership have any property that is eligible for capital cost allowance?  If yes, attach schedule 8
- 		   </xsd:documentation>
-		</xsd:annotation>
-	</xsd:element>
-	<xsd:element name="CapitalPropertyAttachmentIndicator" type="ccms:OneTwoCodeType">
-		<xsd:annotation>
-			<xsd:documentation xml:lang="en"> 
-			Does the partnership have any property that is eligible capital property?  If yes, attach schedule 10
  		   </xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>

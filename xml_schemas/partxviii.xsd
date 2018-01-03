@@ -9,24 +9,22 @@ Version#:	1.17 (version #.yy)
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ccms="http://www.cra-arc.gc.ca/xmlns/ccms/1-0-0" xmlns:sdt="http://www.cra-arc.gc.ca/xmlns/sdt/2-2-0">
 	<xsd:import namespace="http://www.cra-arc.gc.ca/xmlns/sdt/2-2-0" schemaLocation="standarddatatypes.xsd"/>
 	<xsd:import namespace="http://www.cra-arc.gc.ca/xmlns/ccms/1-0-0" schemaLocation="cracommonstructures.xsd"/>
+	<xsd:include schemaLocation="simple.xsd"/>
 	<xsd:include schemaLocation="lemmcommontypes.xsd"/>
 
 	<!-- P18 Slip -->
 	<xsd:complexType name="PartXVIIISlipType">
 		<xsd:sequence>
 			<xsd:element name="DocumentSpecification" type="P18SlipDocSpecType"/>
-			<xsd:element ref="ClientAccountNumber"/>
+			<xsd:element name="ClientAccountNumber" type="P18ClientAccountNumberType"/>
 			<xsd:element name="ClientAccountNumberTypeCode" type="indicator1-5Type" minOccurs="0"/>
 			<xsd:element name="ClosedClientAccountIndicator" type="indicatorYesNoType" minOccurs="0"/>
-			<xsd:element ref="AccountHolder"/>
-			<xsd:element ref="AccountBalanceAmount"/>
+			<xsd:element name="AccountHolder" type="P18AccountHolderType"/>
+			<xsd:element name="AccountBalanceAmount" type="Decimal15AmountType"/>
 			<xsd:element ref="AccountPaymentAmount" minOccurs="0"/>
 			<xsd:element ref="AccountCurrencyTypeCode"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="ClientAccountNumber" type="P18ClientAccountNumberType"/>
-	<xsd:element name="AccountHolder" type="P18AccountHolderType"/>
-	<xsd:element name="AccountBalanceAmount" type="Decimal15AmountType"/>
 	<xsd:element name="AccountPaymentAmount" type="AccountPaymentAmountType"  />
 	<xsd:element name="AccountCurrencyTypeCode" type="CurrencyCodeType"/>
 	<xsd:simpleType name="P18SlipDocRefIdType">
@@ -39,12 +37,26 @@ Version#:	1.17 (version #.yy)
 	</xsd:simpleType>
 	<xsd:complexType name="P18SlipDocSpecType">
 		<xsd:all>
-			<xsd:element ref="DocumentTypeCode"/>
+			<xsd:element name="DocumentTypeCode" type="P18SlipCodeType"/>
 			<xsd:element name="DocumentReferenceIdentifier" type="P18SlipDocRefIdType"/>
 			<xsd:element name="CorrectedDocumentReferenceIdentifier" type="P18SlipDocRefIdType" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>
-	<xsd:element name="DocumentTypeCode" type="SlipCodeType"/>
+	<xsd:simpleType name="P18SlipCodeType">
+		<xsd:restriction base="sdt:CodeType">
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="a"/>
+			<xsd:enumeration value="m"/>
+			<xsd:enumeration value="o"/>
+			<xsd:enumeration value="c"/>
+			<xsd:enumeration value="f"/>
+			<xsd:whiteSpace value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<!-- Is special char e.g. /# allowed? -->
 	<xsd:simpleType name="P18ClientAccountNumberType">
 		<xsd:restriction base="sdt:CodeType">
@@ -54,9 +66,9 @@ Version#:	1.17 (version #.yy)
 	</xsd:simpleType>
 	<xsd:complexType name="P18AccountHolderType">
 		<xsd:sequence>
-			<xsd:element ref="AccountHolderTypeCode"/>
+			<xsd:element name="AccountHolderTypeCode" type="OneThreeCodeType"/>
 			<xsd:group ref="P18AccountHolderGroup"/>
-			<xsd:element ref="AccountHolderAddress"/>
+			<xsd:element name="AccountHolderAddress" type="RequiredCityCountryAddressType"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:group name="P18AccountHolderGroup">
@@ -65,10 +77,10 @@ Version#:	1.17 (version #.yy)
 			<xsd:element ref="OrganizationAccountHolder"/>
 		</xsd:choice>
 	</xsd:group>
-	<xsd:element name="AccountHolderTypeCode" type="OneThreeCodeType"/>
+	
 	<xsd:element name="IndividualAccountHolder" type="P18IndAHType"/>
 	<xsd:element name="OrganizationAccountHolder" type="P18OrgAHType"/>
-	<xsd:element name="AccountHolderAddress" type="RequiredCityCountryAddressType"/>
+	
 	<xsd:simpleType name="OneThreeCodeType">
 		<xsd:annotation>
 			<xsd:documentation>1-individual account holder; 3-organization account holder.</xsd:documentation>
@@ -82,31 +94,19 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="P18IndAHType">
 		<xsd:sequence>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0" maxOccurs="5"/>
-			<xsd:element ref="IndividualTIN"/>
+			<xsd:element name="IndividualTIN" type="ccms:SINType"/>
 			<xsd:element ref="TINIssueCountryCode" minOccurs="0"/>
 			<xsd:element ref="IndividualIdentificationNumber" minOccurs="0"/>
 			<xsd:element name="AccountHolderName" type="IndividualNameIIType"/>
 			<xsd:element ref="AccountHolderBirthInformation" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="ResidenceCountryCode" type="Length2CountryCodeType"/>
-	<xsd:element name="IndividualTIN" type="ccms:SINType"/>
-	<xsd:element name="TINIssueCountryCode" type="Length2CountryCodeType"/>
-	<xsd:element name="IndividualIdentificationNumber" type="ccms:SINType"/>
-	<xsd:element name="AccountHolderBirthInformation" type="BirthInformationType"/>
 	<xsd:complexType name="IndividualNameIIType">
 		<xsd:sequence>
 			<xsd:element ref="FirstName"/>
 			<xsd:element ref="MiddleName" minOccurs="0"/>
 			<xsd:element ref="LastName"/>
 		</xsd:sequence>
-	</xsd:complexType>
-	<xsd:complexType name="BirthInformationType">
-		<xsd:all>
-			<xsd:element ref="Day"/>
-			<xsd:element ref="Month"/>
-			<xsd:element ref="Year"/>
-		</xsd:all>
 	</xsd:complexType>
 	<xsd:complexType name="AccountPaymentAmountType">
 		<xsd:sequence>
@@ -121,18 +121,15 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="P18OrgAHType">
 		<xsd:sequence>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0" maxOccurs="5"/>
-			<xsd:element ref="OrganizationTIN"/>
+			<xsd:element name="OrganizationTIN" type="P18OrgTINType"/>
 			<xsd:element ref="TINIssueCountryCode" minOccurs="0"/>
-			<xsd:element ref="BusinessNumber" minOccurs="0"/>
+			<xsd:element name="BusinessNumber" type="BNTrustTypes" minOccurs="0"/>
 			<xsd:element name="AccountHolderName" type="TwoLinedLength35NameType"/>
-			<xsd:element ref="OrganizationAccountHolderTypeCode"/>
-			<xsd:element ref="ControllingPerson" minOccurs="0" maxOccurs="16"/>
+			<xsd:element name="OrganizationAccountHolderTypeCode" type="P18OrgAHCodeType"/>
+			<xsd:element name="ControllingPerson" type="P18CPType" minOccurs="0" maxOccurs="16"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:element name="OrganizationAccountHolderTypeCode" type="P18OrgAHCodeType"/>
-	<xsd:element name="OrganizationTIN" type="P18OrgTINType"/>
-	<xsd:element name="BusinessNumber" type="BNType"/>
-	<xsd:element name="ControllingPerson" type="P18CPType"/>
+	
 	<xsd:simpleType name="P18OrgAHCodeType">
 		<xsd:annotation>
 			<xsd:documentation>
@@ -162,7 +159,7 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="P18CPType">
 		<xsd:sequence>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0" maxOccurs="5"/>
-			<xsd:element ref="IndividualTIN"/>
+			<xsd:element name="IndividualTIN" type="ccms:SINType"/>
 			<xsd:element ref="TINIssueCountryCode" minOccurs="0"/>
 			<xsd:element ref="IndividualIdentificationNumber" minOccurs="0"/>
 			<xsd:element name="ControllingPersonName" type="IndividualNameIIType"/>
@@ -175,7 +172,7 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="PartXVIIISummaryType">
 		<xsd:all>
 			<xsd:element ref="FilerAccountNumber"/>
-			<xsd:element ref="SummaryReportTypeCode"/>
+			<xsd:element name="SummaryReportTypeCode" type="P18SummaryCodeType"/>
 			<xsd:element name="RecipientCountryCode" type="Length2CountryCodeType"/>
 			<xsd:element name="PartXVIIITypeCode" type="P18TypeCodeType"/>
 			<xsd:element ref="TaxationYear"/>
@@ -187,6 +184,20 @@ Version#:	1.17 (version #.yy)
 			<xsd:element name="TotalAccountPaymentAmount" type="P18TotalAcctPaymentAmtType" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>
+	<xsd:simpleType name="P18SummaryCodeType">
+		<xsd:restriction base="sdt:CodeType">
+			<xsd:length value="1"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="a"/>
+			<xsd:enumeration value="m"/>
+			<xsd:enumeration value="o"/>
+			<xsd:enumeration value="f"/>
+			<xsd:whiteSpace value="collapse"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<xsd:simpleType name="P18TypeCodeType">
 		<xsd:annotation>
 			<xsd:documentation>Enter F for FATCA reporting</xsd:documentation>
@@ -208,7 +219,7 @@ Version#:	1.17 (version #.yy)
 	<xsd:element name="GlobalIntermediaryIdentificationNumber" type="GIINType"/>
 	<xsd:complexType name="P18FIDocSpecType">
 		<xsd:all>
-			<xsd:element name="DocumentTypeCode" type="SummaryCodeType"/>
+			<xsd:element name="DocumentTypeCode" type="P18SummaryCodeType"/>
 			<xsd:element name="DocumentReferenceIdentifier" type="P18FIDocRefIdType"/>
 			<xsd:element name="CorrectedDocumentReferenceIdentifier" type="P18FIDocRefIdType" minOccurs="0"/>
 		</xsd:all>
@@ -240,7 +251,7 @@ Version#:	1.17 (version #.yy)
 	</xsd:complexType>
 	<xsd:complexType name="P18SponsorDocSpecType">
 		<xsd:all>
-			<xsd:element ref="DocumentTypeCode"/>
+			<xsd:element name="DocumentTypeCode" type="P18SlipCodeType"/>
 			<xsd:element name="DocumentReferenceIdentifier" type="P18SponsorDocRefIdType"/>
 			<xsd:element name="CorrectedDocumentReferenceIdentifier" type="P18SponsorDocRefIdType" minOccurs="0"/>
 		</xsd:all>

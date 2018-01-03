@@ -2,8 +2,8 @@
 
 <!--
 Description	OL Layout Topologie (T5013) - Common Record Layout
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:olsbr="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/olsbr/1-0-1">

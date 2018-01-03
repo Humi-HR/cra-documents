@@ -41,7 +41,6 @@ For the Schedule1LineAmounts, the expected line numbers and Descriptions are lis
 105	Amortization of natural resource assets
 106	Amortization of intangible assets
 107	Recapture of capital cost allowance from Schedule 8
-108	Income recapture inclusion on sale of eligible capital property from Schedule 10
 109	Income or loss for tax purposes from partnerships
 110	Loss in equity of affiliates
 111	Loss on disposal of assets per financial statements
@@ -62,7 +61,6 @@ For the Schedule1LineAmounts, the expected line numbers and Descriptions are lis
 150	Salary and wages paid to partners deducted on financial statements
 151	Cost of products available for sale that were consumed
 152	Personal expenses of the partners paid by the partnership
-153	Residual income inclusion on sale of eligible capital property from Schedule 10
 154	Dividend rental arrangement compensation payment deductions
 155	Renounced exploration, development and resource property expenses deducted per financial statements from Schedule 52
 156	Certain fines and penalties
@@ -138,7 +136,6 @@ Other deductions:
 402	Non-taxable dividends under section 83
 403	Capital cost allowance from Schedule 8
 404	Terminal loss from Schedule 8
-405	Cumulative eligible capital deduction from Schedule 10
 407	Foreign non-business tax deduction under subsection 20(12)
 408	Prior fiscal period_s holdbacks
 409	Deferred and prepaid expenses

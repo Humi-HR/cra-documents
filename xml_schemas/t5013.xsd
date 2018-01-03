@@ -2,8 +2,8 @@
 
 <!--
 Description	T5013 Return Complex and Element Types
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:sdt="http://www.cra-arc.gc.ca/xmlns/sdt/2-2-0" 
@@ -162,8 +162,6 @@ Version#:	1.16 (version #.yy)
 	Capital Gain Amount	 							- not a multi-jurisdictional field
 156	Foreign Capital Gain/Loss Amount	 					- Multi-jurisdictional field
 157	Tax Exempt Foreign Capital Gain Amount	 					- Multi-jurisdictional field
-158	Qualified Farm Property Qualified Fishing Property Eligible Capital Property 
-	Deduction Eligible Income Amount	 					- not a multi-jurisdictional field
 159	Capital Gain Reserve Amount	 						- not a multi-jurisdictional field
 160	Child Qualified Farm Property Qualified Fishing Property Capital Gain 
 	Reserve Amount	 								- not a multi-jurisdictional field
@@ -303,6 +301,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element ref="FiscalPeriodEndDate" minOccurs="0"/>	
 			<xsd:element ref="TotalSlipCount"/>	
  			<xsd:element ref="SummaryReportTypeCode"/> 
+ 			<xsd:element name="fileramendmentnote" type="Length1to1309TextType" minOccurs="0"/>
 			<xsd:element ref="T5013TotalsAmount"  minOccurs="0"/>		
 		</xsd:sequence>
 	</xsd:complexType>

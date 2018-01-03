@@ -2,8 +2,8 @@
 
 <!--
 Description	Common Simple, Complex and Element Types for INFODEC returns
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 Revision History:
 Mar 2013	Initial creation to allow new Infodec schemas to follow the new CRA XML standard.
 Apr 2014	Updated to include common types used for PartXVIII return.
@@ -111,6 +111,10 @@ May 2015	Updated to include common types used for T3 special returns.
 			<xsd:pattern value="(\p{L}{1}[0-9]{8})"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	
+	<xsd:simpleType name="BNTrustTypes">
+			<xsd:union memberTypes="BNType TrustNumberType"/>
+	</xsd:simpleType>
 
 	<xsd:simpleType name="Length3NumberType">
 		<xsd:restriction base="sdt:NumberType">
@@ -169,6 +173,12 @@ May 2015	Updated to include common types used for T3 special returns.
 	<!--                                                               -->
 	<!-- Variable Length Numeric definitions (2,3,4,7,8,11,12,13,15)   -->
 	<!--                                                               -->
+	<xsd:simpleType name="Length5NumberType">
+		<xsd:restriction base="sdt:NumberType">
+			<xsd:pattern value="\d{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
 	<xsd:simpleType name="Length1to5NumberType">
 		<xsd:restriction base="sdt:NumberType">
 			<xsd:pattern value="\d{1,5}"/>
@@ -178,6 +188,18 @@ May 2015	Updated to include common types used for T3 special returns.
 	<xsd:simpleType name="Length1to7NumberType">
 		<xsd:restriction base="sdt:NumberType">
 			<xsd:pattern value="\d{1,7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Length1to13NumberType">
+		<xsd:restriction base="sdt:NumberType">
+			<xsd:pattern value="\d{1,13}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="SignedLength1to13NumberType">
+		<xsd:restriction base="sdt:NumberType">
+			<xsd:pattern value="[+-]?\d{1,13}"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 
@@ -411,6 +433,15 @@ May 2015	Updated to include common types used for T3 special returns.
 			</xsd:restriction>
 		</xsd:simpleContent>
 	</xsd:complexType>
+	
+	<xsd:complexType name="Length1to1309TextType">
+		<xsd:simpleContent>
+			<xsd:restriction base="sdt:TextType">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="1309"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
 
 	<xsd:complexType name="EmailLength1to60TextType">
 		<xsd:simpleContent>
@@ -532,6 +563,16 @@ May 2015	Updated to include common types used for T3 special returns.
 		</xsd:all>
 	</xsd:complexType>
 
+	<xsd:complexType name="ContactType5">
+		<xsd:sequence>
+			<xsd:element ref="ContactName"/>
+			<xsd:element ref="ContactPhoneAreaCode"/>
+			<xsd:element ref="ContactPhoneNumber"/>
+			<xsd:element name="ContactPhoneExtensionNumber" type="Length1to7NumberType" minOccurs="0"/>
+			<xsd:element ref="ContactEmailAddress" maxOccurs="5"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
 	<xsd:complexType name="TwoLinedLength30NameType">
 		<xsd:sequence>
 			<xsd:element name="NameLine1Text" type="ccms:Character30TextType"/>
@@ -650,42 +691,39 @@ May 2015	Updated to include common types used for T3 special returns.
 	</xsd:element>
 
 	<xsd:element name="ContactAreaCode" type="PhoneAreaCodeType"/>
-
 	<xsd:element name="ContactPhoneAreaCode" type="PhoneAreaCodeType"/>
-
 	<xsd:element name="ContactPhoneNumber" type="PhoneNumberType"/>
-
 	<xsd:element name="ContactExtensionNumber" type="Length1to5NumberType"/>
-
 	<xsd:element name="ContactPhoneExtensionNumber" type="Length1to5NumberType"/>
-
 	<xsd:element name="SummaryReportTypeCode" type="SummaryCodeType"/>
-
 	<xsd:element name="SlipReportTypeCode" type="SlipCodeType"/>
-
 	<xsd:element name="TaxationYear" type="sdt:YearType"/>
-
 	<xsd:element name="TotalSlipCount" type="Length1to7CountType"/>
-
 	<xsd:element name="FilerAccountNumber" type="BNType"/>
-
 	<xsd:element name="ContactFamilyName" type="ccms:Name30CharacterType"/>
-
 	<xsd:element name="ContactGivenName" type="ccms:Name30CharacterType"/>
-
 	<xsd:element name="ContactEmailAddress" type="EmailLength1to60TextType"/>
-
 	<xsd:element name="FirstName" type="Length30NameType"/>
-
 	<xsd:element name="MiddleName" type="Length30NameType"/>
-
 	<xsd:element name="LastName" type="Length30NameType"/>
-
 	<xsd:element name="Day" type="sdt:DayType"/>
-
 	<xsd:element name="Month" type="sdt:MonthType"/>
-
 	<xsd:element name="Year" type="sdt:YearType"/>
-
 	<xsd:element name="ProvinceStateCodeOrName" type="Length1to30TextType"/>
+	
+	<!-- P18 - P19 Shared Element -->	
+	<xsd:element name="BusinessNumber" type="BNType"/>
+	<xsd:element name="ResidenceCountryCode" type="Length2CountryCodeType"/>
+	<xsd:element name="TINIssueCountryCode" type="Length2CountryCodeType"/>
+	<xsd:element name="IndividualIdentificationNumber" type="ccms:SINType"/>
+	<xsd:element name="AccountHolderBirthInformation" type="BirthInformationType"/>
+	
+	<xsd:complexType name="BirthInformationType">
+		<xsd:all>
+			<xsd:element ref="Day"/>
+			<xsd:element ref="Month"/>
+			<xsd:element ref="Year"/>
+		</xsd:all>
+	</xsd:complexType>
+	
 </xsd:schema>

@@ -33,7 +33,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 			<xsd:element ref="ols2:FederalContributionTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
 			<xsd:element ref="ols2:EcologicalGiftsTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
 			<xsd:element ref="ols2:CulturalProperytGiftsTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
-			<xsd:element ref="ols2:GiftsToCanadaProvinceTerritoryTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
 			<xsd:element ref="ols2:CharitableDonationsTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
 		</xsd:sequence>
 	</xsd:complexType>
@@ -47,9 +46,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 			<xsd:documentation>
 	Charitable Donations
 	Enter each partner's share of the amount from box 2-210 in box 182 of the T5013 slips
-	
-	Gifts to Canada, a province or a territory
-	Enter each partner's share of the amount from box 2-310 in box 182 of the T5013 slips
 	
 	Gifts of certified cultural property
 	Enter each partner's share of the amount from box 2-410 in box 183 of the T5013 slips
@@ -130,7 +126,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 		<xsd:simpleContent>
 			<xsd:restriction base="sdt:NameType">
 				<xsd:enumeration value="Charitable donations"/>
-				<xsd:enumeration value="Gifts to Canada, a province, or a territory"/>
 				<xsd:enumeration value="Gifts of certified cultural property"/>
 				<xsd:enumeration value="Gifts of certified ecologically sensitive land"/>
 			</xsd:restriction>
@@ -152,7 +147,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 	<xsd:element name="FederalContributionTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="EcologicalGiftsTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="CulturalProperytGiftsTotalEligibleAmount" type="sdt:AmountType"/>
-	<xsd:element name="GiftsToCanadaProvinceTerritoryTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="CharitableDonationsTotalEligibleAmount" type="sdt:AmountType"/>
 
 	<xsd:element name="GiftOfMedicineRecipientName" type="ccms:Name60CharacterType" />

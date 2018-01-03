@@ -47,7 +47,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 			<xsd:element ref="ols6:Schedule6GiftsOfCertainCapitalPropertyTotalAmount" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="ols6:Schedule6CapitalGainsLossesFromAllT5AndT4PSSlipsAmount" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="ols6:Schedule6CapitalGainsLossesFromAllT3SlipsAmount" minOccurs="0" maxOccurs="1"/>
-			<xsd:element ref="ols6:Schedule6T5013Schedule10Line103Amount" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="ols6:Schedule6CapitalGainsLossesAmount" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="ols6:Schedule6QSBCSharesDeductionAmount" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="ols6:Schedule6QFFPDeductionAmount" minOccurs="0" maxOccurs="1"/>
@@ -303,7 +302,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 	<!-- Part 11 Capital gains (losses) from other sources-->
 	<xsd:element name="Schedule6CapitalGainsLossesFromAllT5AndT4PSSlipsAmount" type="sdt:AmountType"/>
 	<xsd:element name="Schedule6CapitalGainsLossesFromAllT3SlipsAmount" type="sdt:AmountType"/>
-	<xsd:element name="Schedule6T5013Schedule10Line103Amount" type="sdt:AmountType"/>
 		
 	<!-- Part 12 Amounts eligible for capital gains deductions -->
 	<xsd:element name="Schedule6QSBCSharesDeductionAmount" type="sdt:AmountType"/>

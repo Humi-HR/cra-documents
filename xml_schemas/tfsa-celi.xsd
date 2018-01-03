@@ -2,8 +2,8 @@
 
 <!--
 Description	TFSA Return Complex and Element Types
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -121,6 +121,7 @@ Version#:	1.16 (version #.yy)
 		<xsd:all>
 			<xsd:element name="bn" type="bnType"/>
 			<xsd:element name="summ_tcd" type="otherDataType"/>
+			<xsd:element name="fileramendmentnote" type="char1309Type" minOccurs="0"/>
 			<xsd:element name="rpt_yr" type="yearType"/>
 			<xsd:element name="tfsa_pln_id" type="numeric8Type"/>
 			<xsd:element name="slp_cnt" type="int7Type"/>

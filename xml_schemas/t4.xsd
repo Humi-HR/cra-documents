@@ -2,8 +2,8 @@
 
 <!--
 Description	T4 Return Complex and Element Types
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -19,7 +19,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="ei_xmpt_cd" type="indicator0-1Type"/>
 			<xsd:element name="prov_pip_xmpt_cd" type="indicator0-1Type" minOccurs="0"/>
 			<xsd:element name="empt_cd" type="numeric2Type" minOccurs="0"/>
-			<xsd:element name="rpt_tcd" type="slipDataType"/>
+			<xsd:element name="rpt_tcd" type="slipDataType"/> 
 			<xsd:element name="empt_prov_cd" type="provinceType"/>
 			<xsd:element name="T4_AMT" type="T4AmtType" minOccurs="0"/>
 			<xsd:element name="OTH_INFO" type="OtherInformationType" minOccurs="0">
@@ -146,6 +146,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="slp_cnt" type="int7Type"/>
 			<xsd:element name="PPRTR_SIN" type="PropSinType" minOccurs="0"/>
 			<xsd:element name="rpt_tcd" type="otherDataType"/>
+			<xsd:element name="fileramendmentnote" type="char1309Type" minOccurs="0"/> 
 			<xsd:element name="T4_TAMT" type="T4TotalsType" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>

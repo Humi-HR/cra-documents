@@ -2,8 +2,12 @@
 
 <!--
 Description	Layout topologie - Common Record Layout
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
+Revision History:
+Jan 2016	Add T3 special returns.
+Jan 2017	Add T3 general return.
+
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -43,6 +47,8 @@ Version#:	1.16 (version #.yy)
 	<xsd:include schemaLocation="t3prp.xsd"/>
 	<xsd:include schemaLocation="t1061.xsd"/>
 	<xsd:include schemaLocation="t2000.xsd"/>
+	<xsd:include schemaLocation="t3general.xsd"/>
+	<xsd:include schemaLocation="partxix.xsd"/>
 	<xsd:include schemaLocation="frms.xsd"/>
 	<!-- @@@@    Common Record Layout     @@@@ -->
 	<xsd:element name="Submission" type="ReturnType"/>

@@ -16,7 +16,6 @@ xmlns:ols6="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols6/1
 xmlns:ols8="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols8/1-0-1" 
 xmlns:ols8-1="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols8-1/1-0-1" 
 xmlns:ols9="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols9/1-0-1" 
-xmlns:ols10="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols10/1-0-1" 
 xmlns:ols12="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols12/1-0-1" 
 xmlns:ols50="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols50/1-0-1" 
 xmlns:ols52="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols52/1-0-1" 
@@ -34,7 +33,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols8/1-0-1" schemaLocation="t5013sch08.xsd"/>
 	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols8-1/1-0-1" schemaLocation="t5013sch08-1.xsd"/>
 	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols9/1-0-1" schemaLocation="t5013sch09.xsd"/>
-	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols10/1-0-1" schemaLocation="t5013sch10.xsd"/>
 	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols12/1-0-1" schemaLocation="t5013sch12.xsd"/>
 	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols50/1-0-1" schemaLocation="t5013sch50.xsd"/>
 	<xsd:import namespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/ols52/1-0-1" schemaLocation="t5013sch52.xsd"/>
@@ -54,7 +52,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 			<xsd:element ref="ols8:T5013Schedule8Data" minOccurs="0"/>
 			<xsd:element ref="ols8-1:T5013Schedule8-1Data" minOccurs="0"/>
 			<xsd:element ref="ols9:T5013Schedule9Data" minOccurs="0"/>
-			<xsd:element ref="ols10:T5013Schedule10Data" minOccurs="0" maxOccurs ="2000"/>
 			<xsd:element ref="ols12:T5013Schedule12Data" minOccurs="0"/>
 			<xsd:element ref="ols50:T5013Schedule50Data" minOccurs="0"/>
 			<xsd:element ref="ols52:T5013Schedule52Data" minOccurs="0"/>

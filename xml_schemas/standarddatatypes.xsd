@@ -2,8 +2,8 @@
 
 <!--
 Description	CRA-wide Standard Data Types to be imported into all CRA schemas. (Includes ISO 15000-5 CCTS Core Data Types + CRA synonyms and additions)
-Last updated 	November 2016
-Version#:	1.16 (version #.yy)
+Last updated 	October 2017
+Version#:	1.17 (version #.yy)
 -->
 
 <xsd:schema 
@@ -117,7 +117,6 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2-2-0
 			</xsd:extension>
 		</xsd:simpleContent>
 	</xsd:complexType>
-	
 	<xsd:simpleType name="MonthType">
 		<xsd:restriction base="xsd:token">
 			<xsd:enumeration value="01"/>
@@ -136,7 +135,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2-2-0
 	</xsd:simpleType>
 	<xsd:complexType name="NameType">
 		<xsd:simpleContent>
-			<xsd:extension base="xsd:string">
+			<xsd:extension base="sdt:SimpleTextType">
 				<xsd:attribute ref="xml:lang" use="optional"/>
 			</xsd:extension>
 		</xsd:simpleContent>

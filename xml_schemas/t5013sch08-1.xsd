@@ -60,6 +60,8 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 				<xsd:enumeration value="20"/>
 				<xsd:enumeration value="21"/>
 				<xsd:enumeration value="22"/>
+				<xsd:enumeration value="23"/>
+				<xsd:enumeration value="24"/>
 			</xsd:restriction>
 		</xsd:simpleType>
 	</xsd:element>
