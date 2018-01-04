@@ -7,11 +7,11 @@ This repository contains static documents created by the CRA.
 
 Includes template T4 PDFs.
 
-[CRA T4 PDF](http://www.cra-arc.gc.ca/E/pbg/tf/t4/README.html)
+[CRA T4 PDF](https://www.canada.ca/en/revenue-agency/services/forms-publications/forms/t4-statement-remuneration-paid-slip.html)
 
 
 ## XML Schemas
 
 Includes CRA schemas for validating XML documents, such as the T4 return.
 
-Version 1.17.4, 83 KB, last updated ‎February 12, 2017. [CRA XML Schemas](http://www.cra-arc.gc.ca/esrvc-srvce/rf/hwfl-eng.html#stp2).
+Version 1.18.3, 88 KB, last updated ‎December 19, 2017. [CRA XML Schemas](https://www.canada.ca/en/revenue-agency/services/e-services/filing-information-returns-electronically-t4-t5-other-types-returns-overview/filing-information-returns-electronically-t4-t5-other-types-returns-file.html#stp2).
