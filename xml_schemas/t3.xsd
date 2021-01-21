@@ -2,8 +2,8 @@
 
 <!--
 Description	T3 Return Complex and Element Types
-Last updated 	October 2017
-Version#:	1.17 (version #.yy)
+Last updated 	September 2020
+Version#:	1.16 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
@@ -95,6 +95,7 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="T3SummaryType">
 		<xsd:all>
 			<xsd:element name="tr_acct_nbr" type="trustType"/>
+			<xsd:element name="tr_frst_yr_fil_ind" type="indicatorYesNoType" minOccurs="0"/>
 			<xsd:element name="TR_NM" type="Line2Type"/>
 			<xsd:element name="tre_exctr_admnr_nm" type="char30Type"/>
 			<xsd:element name="TRE_ADDR" type="CanadaAddressType" minOccurs="0"/>
