@@ -2,8 +2,8 @@
 
 <!--
 Description	Part XVIII Return Data Element Types
-Last updated 	November 2016
-Version#:	1.17 (version #.yy)
+Last updated 	September 2020
+Version#:	1.18 (version #.yy)
 -->
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ccms="http://www.cra-arc.gc.ca/xmlns/ccms/1-0-0" xmlns:sdt="http://www.cra-arc.gc.ca/xmlns/sdt/2-2-0">
@@ -94,7 +94,7 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="P18IndAHType">
 		<xsd:sequence>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0" maxOccurs="5"/>
-			<xsd:element name="IndividualTIN" type="ccms:SINType"/>
+			<xsd:element name="IndividualTIN" type="TINType"/>
 			<xsd:element ref="TINIssueCountryCode" minOccurs="0"/>
 			<xsd:element ref="IndividualIdentificationNumber" minOccurs="0"/>
 			<xsd:element name="AccountHolderName" type="IndividualNameIIType"/>
@@ -133,11 +133,11 @@ Version#:	1.17 (version #.yy)
 	<xsd:simpleType name="P18OrgAHCodeType">
 		<xsd:annotation>
 			<xsd:documentation>
-				-F101 for owner-documented FI with specified US owner(s). If selected, you must complete the 						          	      information in the ControllingPerson tags.
-				-F102 for passive non-financial entity with substantial US owner(s). If selected, you must
+			    - F101 for owner-documented FI with specified US owner(s). If selected, you must complete the 						          	      information in the ControllingPerson tags.
+			    - F102 for passive non-financial entity with substantial US owner(s). If selected, you must
 				      complete the information in the ControllingPerson tags.
-				-F103 for non-participating FFI. 
-				-F104 for specified US person.
+			    - F103 for non-participating FFI. 
+			    - F104 for specified US person.
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="sdt:CodeType">
@@ -154,12 +154,24 @@ Version#:	1.17 (version #.yy)
 			<xsd:maxLength value="19"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	
+	<xsd:simpleType name="TINType">
+		<xsd:union memberTypes="ccms:SINType USTempTINType"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="USTempTINType">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="9"/>
+			<xsd:maxLength value="9"/>
+			<xsd:enumeration value="AAAAAAAAA"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 
 	<!-- Controlling Person -->
 	<xsd:complexType name="P18CPType">
 		<xsd:sequence>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0" maxOccurs="5"/>
-			<xsd:element name="IndividualTIN" type="ccms:SINType"/>
+			<xsd:element name="IndividualTIN" type="TINType"/>
 			<xsd:element ref="TINIssueCountryCode" minOccurs="0"/>
 			<xsd:element ref="IndividualIdentificationNumber" minOccurs="0"/>
 			<xsd:element name="ControllingPersonName" type="IndividualNameIIType"/>
@@ -210,6 +222,7 @@ Version#:	1.17 (version #.yy)
 	<xsd:complexType name="P18ReportingFIType">
 		<xsd:all>
 			<xsd:element name="DocumentSpecification" type="P18FIDocSpecType"/>
+			<xsd:element name="FilerCategory" type="FilerCategoryFIType" minOccurs="0"/>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0"/>
 			<xsd:element ref="GlobalIntermediaryIdentificationNumber"/>
 			<xsd:element name="ReportingFinancialInstitutionName" type="TwoLinedLength35NameType"/>
@@ -240,9 +253,27 @@ Version#:	1.17 (version #.yy)
 			<xsd:pattern value="[A-Z0-9]{6}.[A-Z0-9]{5}.\p{Lu}{2}.\d{3}"/>
 		</xsd:restriction>
 	</xsd:simpleType>
+	<xsd:simpleType name="FilerCategoryFIType">
+		<xsd:annotation>
+			<xsd:documentation>
+			 - F601 for foreign financial institution (FFI)
+			 - F602 for Registered Deemed-Compliant (RDC) FFI
+			 - F605 for Qualified Intermediary (QI), Withholding Foreign Partnership (WP), or Withholding Foreign Trust (WT) with an Agreement with the U.S.
+			 - F610 for Withholding Agent under the U.S. Internal Revenue Code
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="sdt:CodeType">
+			<xsd:length value="4"/>
+			<xsd:enumeration value="F601"/>
+			<xsd:enumeration value="F602"/>
+			<xsd:enumeration value="F605"/>
+			<xsd:enumeration value="F610"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<xsd:complexType name="P18FISponsorType">
 		<xsd:all>
 			<xsd:element name="DocumentSpecification" type="P18SponsorDocSpecType"/>
+			<xsd:element name="FilerCategory" type="FilerCategorySponsorType"/>
 			<xsd:element ref="ResidenceCountryCode" minOccurs="0"/>
 			<xsd:element ref="GlobalIntermediaryIdentificationNumber"/>
 			<xsd:element name="SponsorName" type="TwoLinedLength35NameType"/>
@@ -262,6 +293,17 @@ Version#:	1.17 (version #.yy)
 		</xsd:annotation>
 		<xsd:restriction base="sdt:NumberType">
 			<xsd:pattern value="(CA)-\d{2}-\d{9}\p{Lu}{2}\d{4}-(SP)-\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="FilerCategorySponsorType">
+		<xsd:annotation>
+			<xsd:documentation>
+			 - F607 for Sponsoring Entity of a Sponsored foreign financial institution (FFI)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="sdt:CodeType">
+			<xsd:length value="4"/>
+			<xsd:enumeration value="F607"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:complexType name="P18TotalAcctPaymentAmtType">

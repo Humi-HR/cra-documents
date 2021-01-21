@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <!--
 Description	Part XIX Return Data Element Types
-Last updated 	May 2017
+Last updated    September 2020
 Version#:	1.00 (version #.yy)
 -->
 
@@ -94,7 +94,7 @@ Version#:	1.00 (version #.yy)
 
 	<xsd:simpleType name="P19SlipDocRefIdType">
 		<xsd:annotation>
-			<xsd:documentation>Format: CA-YY-BN15-SL-SEQ#, e.g. CA-17-123456789RZ0001-SL-123456789</xsd:documentation>	
+			<xsd:documentation>Format: CA-YY-BN15-SL-SEQ#, e.g. CA-17-123456789RZ0001-SL-123456789</xsd:documentation>
 		</xsd:annotation>
 		<xsd:restriction base="sdt:NumberType">
 			<xsd:pattern value="(CA)-\d{2}-\d{9}\p{Lu}{2}\d{4}-(SL)-\d{9}"/>
@@ -457,7 +457,7 @@ Version#:	1.00 (version #.yy)
 	<xsd:complexType name="P19ReportingFIType">
 		<xsd:all>
 			<xsd:element name="DocumentSpecification" type="P19FIDocSpecType"/>
-			<xsd:element ref="ResidenceCountryCode" minOccurs="0"/>
+			<xsd:element ref="ResidenceCountryCode"/>
 			<xsd:element name="IdentificationNumber" type="BNTrustType"/> 
 			<xsd:element name="INIssueCountryCode" type="Length2CountryCodeType" minOccurs="0"/>									
 			<xsd:element name="INType" type="P19TINTypeType" minOccurs="0"/>  
