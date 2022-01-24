@@ -23,7 +23,7 @@ xmlns:olT661Parts6="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnershi
 		<xsd:annotation>
 			<xsd:documentation>
 				Table data for Part 6
-				Enter each Project Title, salaries, Materials Cost, and Expenditures for fields 750 through 756
+				Enter each Project Title, salaries, Materials Cost, and Expenditures for fields 750 through 758
 			</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -31,6 +31,7 @@ xmlns:olT661Parts6="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnershi
 			<xsd:element ref="olT661Parts6:Salary" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="olT661Parts6:CostOfMaterials" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="olT661Parts6:Expenditures" minOccurs="0" maxOccurs="1"/>
+			<xsd:element ref="olT661Parts6:Overhead" minOccurs="0" maxOccurs="1"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
@@ -38,5 +39,6 @@ xmlns:olT661Parts6="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnershi
 	<xsd:element name="Salary" type="sdt:AmountType" />
 	<xsd:element name="CostOfMaterials" type="sdt:AmountType" />
 	<xsd:element name="Expenditures" type="sdt:AmountType" />
+	<xsd:element name="Overhead" type="sdt:AmountType" />
 	
 </xsd:schema> 
