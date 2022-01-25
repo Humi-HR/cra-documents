@@ -23,7 +23,7 @@
 	</xsd:complexType>
 	<xsd:simpleType name="FormVersionType">
 		<xsd:restriction base="xsd:string">
-			<xsd:enumeration value="17" />
+			<xsd:enumeration value="19" />
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:complexType name="T1200Type">
@@ -141,6 +141,17 @@
 			<xsd:element name="YMPEEscalationRate" type="RateGroupGoingConcernType" minOccurs="0" />
 			<xsd:element name="ITRMaximumPensionLimit" type="RateGroupGoingConcernType" minOccurs="0" />
 			<xsd:element name="RateOfCPIIncrease" type="RateGroupGoingConcernType" minOccurs="0" />
+			
+			<xsd:element name="ExpectedInvestmentReturn" type="RateType" minOccurs="0" />
+			<xsd:element name="ExpectedAdditionalReturn" type="RateType" minOccurs="0" />
+			<xsd:element name="ExpectedExpensesPaid" type="RateType" minOccurs="0" />
+			<xsd:element name="ExpectedInvestmentExpenses" type="RateType" minOccurs="0" />
+			<xsd:element name="OtherExpectedExpenses" type="RateType" minOccurs="0" />
+			<xsd:element name="EffectOfRebalancing" type="RateType" minOccurs="0" />
+			<xsd:element name="MarginsForAdverseDeviations" type="RateType" minOccurs="0" />
+			<xsd:element name="OtherComponents" type="RateType" minOccurs="0" />
+			<xsd:element name="NetGoingConcernValuationInterestRate" type="RateType" minOccurs="0" />		
+			
 			<xsd:element name="YearEscalationCommences" type="DateType" minOccurs="0" />
 			<xsd:element name="MortalityTable" type="MortalityTableGoingConcernType" minOccurs="0" />
 			<xsd:element name="ImprovementScale" type="ImprovementScaleType" minOccurs="0" />
@@ -278,14 +289,11 @@
 			<xsd:element name="ForRetiredMembersGoingConcern" type="AmountType" minOccurs="0" />
 			<xsd:element name="ForOtherParticipantsGoingConcern" type="AmountType" minOccurs="0" />
 			<xsd:element name="ForOptionalAncillaryBenefitsGoingConcern" type="AmountType" minOccurs="0" />
-			<xsd:element name="OtherReserveGoingConcern" type="AmountType" minOccurs="0" />
-			<xsd:element name="ExpensesGoingConcern" type="CheckBoxType" minOccurs="0" />
-			<xsd:element name="AdHocIndexing" type="CheckBoxType" minOccurs="0" />
-			<xsd:element name="ProvisionForAdverseDeviation" type="CheckBoxType" minOccurs="0" />
-			<xsd:element name="OtherReserveTypeGoingConcern" type="String120Type" minOccurs="0" />
+			<xsd:element name="ReservesGoingConcern" type="ReservesGoingConcernType" minOccurs="0" />
 			<xsd:element name="NetFundedPositionSurplusDeficit" type="AmountType" minOccurs="0" />
 			<xsd:element name="AdditionalVoluntaryContributions" type="AmountType" minOccurs="0" />
 			<xsd:element name="MoneyPurchaseAssets" type="AmountType" minOccurs="0" />
+			
 			<xsd:element name="SolvencyAssetsAdjusted" type="AmountType" minOccurs="0" />
 			<xsd:element name="AmountOfWindUp" type="AmountType" minOccurs="0" />
 			<xsd:element name="OptionalAncillaryContributionsSolvency" type="AmountType" minOccurs="0" />
@@ -293,8 +301,7 @@
 			<xsd:element name="ForRetiredMembersSolvency" type="NonNegativeAmountType" minOccurs="0" />
 			<xsd:element name="ForOtherParticipantsSolvency" type="NonNegativeAmountType" minOccurs="0" />
 			<xsd:element name="ForOptionalAncillaryBenefitsSolvency" type="NonNegativeAmountType" minOccurs="0" />
-			<xsd:element name="OtherReserveSolvency" type="NonNegativeAmountType" minOccurs="0" />
-			<xsd:element name="ReserveType" type="ReserveTypeType" minOccurs="0" />
+			<xsd:element name="ReservesSolvency" type="ReservesSolvencyType" minOccurs="0" />
 			<xsd:element name="NetSolvencyPositionSurplusDeficit" type="AmountType" minOccurs="0" />
 			<xsd:element name="IncrementalCost" type="AmountType" minOccurs="0" />
 			<xsd:element name="GoingConcernLiabilities" type="YesOrNoOrNAType" minOccurs="0" />
@@ -304,17 +311,31 @@
 			<xsd:element name="DiscountRateSensitivitySolvency" type="DiscountRateSensitivityType" minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:complexType name="ReserveTypeType">
-		<xsd:choice>
-			<xsd:element name="ExpensesSolvency" type="CheckBoxType" />
-			<xsd:element name="OtherReserveTypeSolvency" type="String120Type" />
-		</xsd:choice>
+	<xsd:complexType name="ReservesGoingConcernType">
+		<xsd:sequence>
+			<xsd:element name="ExpensesGoingConcern" type="AmountType" minOccurs="0" />
+			<xsd:element name="AdHocIndexing" type="AmountType" minOccurs="0" />
+			<xsd:element name="ProvisionForAdverseDeviation" type="AmountType" minOccurs="0" />
+			<xsd:element name="OtherReservesGoingConcern" type="OtherReservesType" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ReservesSolvencyType">
+		<xsd:sequence>
+			<xsd:element name="ExpensesSolvency" type="AmountType" minOccurs="0" />
+			<xsd:element name="OtherReservesSolvency" type="OtherReservesType" minOccurs="0" />
+		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="DiscountRateSensitivityType">
 		<xsd:sequence>
 			<xsd:element name="ChangeInPercentageOnePercentLower" type="RateType" />
 			<xsd:element name="ChangeInAmountOnePercentLower" type="AmountType" />
 			<xsd:element name="ChangeInAmountOnePercentHigher" type="AmountType" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="OtherReservesType">
+		<xsd:sequence>
+			<xsd:element name="OtherReservesReason" type="String120Type" minOccurs="0" />
+			<xsd:element name="OtherReservesAmount" type="AmountType" minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="ActuarialGainsOrLossesType">
@@ -337,13 +358,13 @@
 			<xsd:element name="SalaryIncreaseExperience" type="AmountType" minOccurs="0" />
 			<xsd:element name="OptionalAncillaryContributionsForfeited" type="AmountType" minOccurs="0" />
 			<xsd:element name="MajorContributingSource" type="MajorContributingSourceType" minOccurs="0" maxOccurs="2" />
+			<xsd:element name="AllOtherSourcesCombined" type="AmountType" minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="MajorContributingSourceType">
 		<xsd:sequence>
 			<xsd:element name="MajorContributingSourceName" type="String120Type" minOccurs="0" />
 			<xsd:element name="MajorContributingSourceAmount" type="AmountType" minOccurs="0" />
-			<xsd:element name="AllOtherSourcesCombined" type="AmountType" minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
 	<xsd:complexType name="EventsAndOpinionsType">
@@ -514,9 +535,10 @@
 	</xsd:complexType>
 	<xsd:complexType name="CertificationByActuaryType">
 		<xsd:sequence>
+		    <!-- Part 6 -->
 			<xsd:element name="NameOfActuary" type="String120Type" />
 			<xsd:element name="NameOfFirm" type="String120Type" />
-			<xsd:element name="TelephoneNumber" type="String120Type" />
+			<xsd:element name="TelephoneNumber" type="PhoneNumberType" />
 			<xsd:element name="EmailAddress" type="String120Type" minOccurs="0" />
 		</xsd:sequence>
 	</xsd:complexType>
@@ -587,6 +609,13 @@
 			<xsd:minInclusive value="-999.99"/>
 			<xsd:maxInclusive value="999.99"/>
 			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PhoneNumberType">
+		<xsd:restriction base="xsd:string">
+			<xsd:whiteSpace value="preserve" />
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="17" />
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="PeriodType">

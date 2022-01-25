@@ -25,9 +25,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 		<xsd:sequence>
 			<xsd:element ref="ols2:Schedule2GiftsAndDonationsDetails" minOccurs="0" maxOccurs="2000"/>
 			<xsd:element ref="ols2:Schedule2PoliticalContributionDetails"  minOccurs="0" maxOccurs="2000"/>
-			<xsd:element ref="ols2:Schedule2GiftOfMedicineDetails"  minOccurs="0" maxOccurs="2000"/>
-			
-			<xsd:element ref="ols2:GiftOfMedicineTotalEligibleAmount" minOccurs="0" maxOccurs="1"/>
 			<xsd:element ref="ols2:MunicipalContributionTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
 			<xsd:element ref="ols2:ProvincialTerritryContributionTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
 			<xsd:element ref="ols2:FederalContributionTotalEligibleAmount"  minOccurs="0"  maxOccurs="1"/>
@@ -39,7 +36,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 
 	<xsd:element name="Schedule2GiftsAndDonationsDetails" type="ols2:Schedule2GiftsAndDonationsDetailsType"/>
 	<xsd:element name="Schedule2PoliticalContributionDetails" type="ols2:Schedule2PoliticalContributionDetailsType"/>
-	<xsd:element name="Schedule2GiftOfMedicineDetails" type="ols2:Schedule2GiftOfMedicineDetailsType"/>
 
 	<xsd:complexType name="Schedule2GiftsAndDonationsDetailsType">
 		<xsd:annotation>
@@ -90,24 +86,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 		</xsd:sequence>
 	</xsd:complexType>
 	
-		<xsd:complexType name="Schedule2GiftOfMedicineDetailsType">
-		<xsd:annotation>
-			<xsd:documentation>
-	Gift of Medicine
-	Enter each partner share of the amount from box 810 in box 208 of the T5013 slips
-	
-			</xsd:documentation>
-		</xsd:annotation>
-		<xsd:sequence>
-			<xsd:element ref="ols2:GiftOfMedicineRecipientName" minOccurs="0"  maxOccurs="1"/>
-			<xsd:element ref="ols2:GiftOfMedicineDate" minOccurs="0"  maxOccurs="1"/>
-			<xsd:element ref="ols2:GiftOfMedicineDonorName" minOccurs="0"  maxOccurs="1"/>
-			<xsd:element ref="ols2:GiftOfMedicinePartnershipCostAmount" minOccurs="0"  maxOccurs="1"/>
-			<xsd:element ref="ols2:GiftOfMedicineDispositionProceedsAmount" minOccurs="0"  maxOccurs="1"/>
-			<xsd:element ref="ols2:GiftOfMedicineEligibleAmount" minOccurs="0"  maxOccurs="1"/>
-		</xsd:sequence>
-	</xsd:complexType>
-	
 	<xsd:complexType name="Character175NameType">
 		<xsd:simpleContent>
 			<xsd:restriction base="sdt:NameType">
@@ -141,20 +119,12 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 		</xsd:simpleContent>
 	</xsd:complexType>
 	
-	<xsd:element name="GiftOfMedicineTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="MunicipalContributionTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="ProvincialTerritryContributionTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="FederalContributionTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="EcologicalGiftsTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="CulturalProperytGiftsTotalEligibleAmount" type="sdt:AmountType"/>
 	<xsd:element name="CharitableDonationsTotalEligibleAmount" type="sdt:AmountType"/>
-
-	<xsd:element name="GiftOfMedicineRecipientName" type="ccms:Name60CharacterType" />
-	<xsd:element name="GiftOfMedicineDate" type="sdt:DateType"/>
-	<xsd:element name="GiftOfMedicineDonorName" type="ccms:Name60CharacterType" />
-	<xsd:element name="GiftOfMedicinePartnershipCostAmount" type="sdt:AmountType"/>
-	<xsd:element name="GiftOfMedicineDispositionProceedsAmount" type="sdt:AmountType"/>
-	<xsd:element name="GiftOfMedicineEligibleAmount" type="sdt:AmountType"/>
 
 	<xsd:element name="CharitableGiftTypeName" type="ols2:CharitableGiftType"/>
 	<xsd:element name="PoliticalDonationTypeName" type="ols2:PoliticalDonationType"/>

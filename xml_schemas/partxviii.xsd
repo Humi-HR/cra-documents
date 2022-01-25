@@ -2,7 +2,6 @@
 
 <!--
 Description	Part XVIII Return Data Element Types
-Last updated 	September 2020
 Version#:	1.18 (version #.yy)
 -->
 
@@ -196,6 +195,21 @@ Version#:	1.18 (version #.yy)
 			<xsd:element name="TotalAccountPaymentAmount" type="P18TotalAcctPaymentAmtType" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>
+	<xsd:simpleType name="P18FIDocCodeType">
+		<xsd:restriction base="sdt:CodeType">
+			<xsd:length value="1"/>
+			<xsd:enumeration value="O"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="C"/>
+			<xsd:enumeration value="F"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="o"/>
+			<xsd:enumeration value="a"/>
+			<xsd:enumeration value="c"/>
+			<xsd:enumeration value="f"/>
+			<xsd:enumeration value="m"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 	<xsd:simpleType name="P18SummaryCodeType">
 		<xsd:restriction base="sdt:CodeType">
 			<xsd:length value="1"/>
@@ -232,7 +246,7 @@ Version#:	1.18 (version #.yy)
 	<xsd:element name="GlobalIntermediaryIdentificationNumber" type="GIINType"/>
 	<xsd:complexType name="P18FIDocSpecType">
 		<xsd:all>
-			<xsd:element name="DocumentTypeCode" type="P18SummaryCodeType"/>
+			<xsd:element name="DocumentTypeCode" type="P18FIDocCodeType"/>
 			<xsd:element name="DocumentReferenceIdentifier" type="P18FIDocRefIdType"/>
 			<xsd:element name="CorrectedDocumentReferenceIdentifier" type="P18FIDocRefIdType" minOccurs="0"/>
 		</xsd:all>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
-Description	List of Form Type Choices	
-Last updated 	september 2020
+Description	List of Form Type Choices
 Version#:	1.17 (version #.yy)
 Revision History:
 Jan 2016	Add T3 special returns.
@@ -47,16 +46,12 @@ Jan 2017	Add T3 general return.
 			<!-- New form types for 2016 -->
 			<xsd:element name="T3D" type="T3DReturnType" minOccurs="0"/>
 			<xsd:element name="T3P" type="T3PReturnType" minOccurs="0"/>
-			<xsd:element name="T3S" type="T3SReturnType" minOccurs="0"/>
 			<xsd:element name="T3RI" type="T3RIReturnType" minOccurs="0"/>
-			<xsd:element name="T3ATH-IND" type="T3ATHINDReturnType" minOccurs="0"/>
-			<xsd:element name="T3M" type="T3MReturnType" minOccurs="0"/>
 			<xsd:element name="T3GR" type="T3GRReturnType" minOccurs="0"/>
 			<xsd:element name="T3PRP" type="T3PRPReturnType" minOccurs="0"/>
 			<xsd:element name="T1061" type="T1061ReturnType" minOccurs="0"/>
 			<xsd:element name="T2000" type="T2000ReturnType" minOccurs="0"/>
 			<!-- New form types for 2018 -->
-			<xsd:element name="T3GEN" type="T3GenReturnType" minOccurs="0"/>
 			<xsd:element name="PartXIX" type="PartXIXReturnType" minOccurs="0"/>	
 			<!-- New form types for 2019 -->
 			<xsd:element name="T2202" type="T2202ReturnType" minOccurs="0"/>
