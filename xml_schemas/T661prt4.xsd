@@ -27,7 +27,7 @@ xmlns:olT661Parts4="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnershi
 			prescribed proxy amount (complete Part 5) (Enter "0" if you use the traditional method)   502
 			expenditures on shared-use equipment for property acquired before 2014      
 			qualified expenditures transferred to you (see note 3) (complete Form T1146**)   508
-			Subtotal (add lines 492 to 508, and add lines 496 to 510)   511
+			Subtotal (add lines 492 to 508)   511
 			provincial government assistance   513
 			other government assistance   515
 			non-government assistance and contract payments   517
@@ -39,9 +39,8 @@ xmlns:olT661Parts4="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnershi
 			assistance allocated to you (complete Form T1145*)   538
 			expenditures for non-arm's length SRED contracts (from line 345)   541
 			adjustments to purchases (limited to costs) of goods and services from non-arm's length suppliers (see guide)   542
-			qualified expenditures you transferred (complete Form T1146**)   544
-			Subtotal (line 511 minus lines 513 to 544 and line 512 minus lines 514 to 546)   557
-			Qualified SRED expenditures (add lines 557 and 558)        559
+			qualified expenditures you transferred (complete Form T1146**)   544			
+			Qualified SRED expenditures (line 511 minus lines 513 to 544)        559
 			repayments of assistance and contract payments made in the year      560
 			Total qualified SRED expenditures for ITC purposes (add lines 559 and 560)      570
 		</xsd:documentation>

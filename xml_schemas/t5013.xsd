@@ -2,8 +2,6 @@
 
 <!--
 Description	T5013 Return Complex and Element Types
-Last updated 	September 2020:
-				Add notes for financial details field code 226, 227, 228, 229, 230, 231, 232, 233, 234, 235 
 Version#:	1.17 (version #.yy)
 -->
 
@@ -184,8 +182,6 @@ Version#:	1.17 (version #.yy)
 174	Canadian Development Expense Amount	 					- not a multi-jurisdictional field
 175	Canadian Oil And Gas Property Expense Amount	 				- not a multi-jurisdictional field
 176	Foreign Exploration and Development Expense Amount	 			- Multi-jurisdictional field
-177	Earned Depletion Recapture Amount	 					- not a multi-jurisdictional field
-178	Resource Allowance Deduction Eligible Amount	 				- not a multi-jurisdictional field
 179	Canadian Exploration Expense Assistance Amount	 				- not a multi-jurisdictional field
 180	Canadian Development Expense Assistance Amount	 				- not a multi-jurisdictional field
 181	Canadian Oil And Gas Property Expense Assistance Amount	 			- not a multi-jurisdictional field
@@ -230,17 +226,19 @@ Version#:	1.17 (version #.yy)
         property (QXP)    
 224     Prior year reserves from qualified small business corporation shares (QSBCS)    - not a multi-jurisdictional field
 225     Current year reserves from qualified small business corporation shares (QSBCS)  - not a multi-jurisdictional field
-226     Amount repaid pursuant to a legal obligation (for Canadian exploration expenses)  - not a multi-jurisdictional field
-227     Amount repaid pursuant to a legal obligation (for Canadian development expenses)  - not a multi-jurisdictional field
-228     Amount repaid pursuant to a legal obligation (for Canadian oil and gas property expenses)  - not a multi-jurisdictional field
-229     Amount receivable (for Canadian exploration expenses)  - not a multi-jurisdictional field
-230     Amount receivable (for Canadian development expenses)  - not a multi-jurisdictional field
-231     Amount receivable (for Canadian oil and gas property expenses)  - not a multi-jurisdictional field
-232     Proceeds of disposition (for Canadian development expenses)  - not a multi-jurisdictional field
-233     Proceeds of disposition (for Canadian oil and gas property expenses)  - not a multi-jurisdictional field
-234     Accelerated Canadian development expenses  - not a multi-jurisdictional field
-235     Accelerated Canadian oil and gas property expenses  - not a multi-jurisdictional field
-236     Canadian journalism labour tax credit                                           - not a multi - jurisdictional field
+226     Repaid assistance (for Canadian exploration expenses)                           - not a multi-jurisdictional field
+227     Repaid assistance (for Canadian development expenses)                           - not a multi-jurisdictional field
+228     Repaid assistance (for Canadian oil and gas property expenses)                  - not a multi-jurisdictional field
+229     Amount receivable for CEE property or unitized oil and gas field CEE            - not a multi-jurisdictional field
+230     Amount receivable for CDE property or unitized oil and gas field CDE            - not a multi-jurisdictional field
+231     Amount receivable for unitized oil and gas field CCOGPE                         - not a multi-jurisdictional field
+232     Proceeds of disposition (for Canadian development expenses)                     - not a multi-jurisdictional field
+233     Proceeds of disposition (for Canadian oil and gas property expenses)            - not a multi-jurisdictional field
+234     Accelerated Canadian development expenses                                       - not a multi-jurisdictional field
+235     Accelerated Canadian oil and gas property expenses                              - not a multi-jurisdictional field
+236     Canadian journalism labour tax credit                                           - not a multi-jurisdictional field
+237	Farmer Fuel Charge Tax Credit	 						- Multi-jurisdictional field
+238	Ventilation Sysem Installation Tax Credit					- Multi-jurisdictional field
 
 			</xsd:documentation> 
 		</xsd:annotation>

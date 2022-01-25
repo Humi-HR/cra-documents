@@ -34,17 +34,13 @@ xmlns:olT661Parts3="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnershi
 			Cost of materials transformed in performing SRED   325
 			Arm's length contracts (see note 1)   340
 			Non-arm's length contracts (see note 1)   345
-			All or substantially all (90% of the time or more) for SRED   350
-			Primarily (more than 50% of the time but less than 90%) for SRED (Enter 50% of the lease costs if you use the proxy method or enter "0" if you use the traditional method)   355
 			Overhead and other expenditures (enter "0" if you use the proxy method)   360
 			Third-party payments (see note 2) (complete Form T1263*)   370
-			Total current SRED expenditures   380
-			Capital expenditures for depreciable property available for use before 2014 (Do not include these capital expenditures on schedule T2SCH8)   390
-			Total allowable SRED expenditures (add lines 380 and 390)   400
-			Amount from line 400   420
-			provincial government assistance for expenditures included on line 400   429
-			other government assistance for expenditures included on line 400   431
-			non-government assistance for expenditures included on line 400   432
+			Total allowable SRED expenditures   380
+			Amount from line 380   420
+			provincial government assistance for expenditures included on line 380   429
+			other government assistance for expenditures included on line 380   431
+			non-government assistance for expenditures included on line 380   432
 			SRED ITCs applied and/or refunded in the prior year (see guide)   435
 			sale of SRED capital assets and other deductions   440
 			Subtotal (line 420 minus lines 429 to 440)   442

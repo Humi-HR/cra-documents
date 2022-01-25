@@ -24,7 +24,6 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 		<xsd:sequence>
 			<xsd:element ref="ols12:Schedule12LineAmounts" minOccurs="0" maxOccurs="200"/>
 			<xsd:element ref="ols12:Schedule12ForeignResourceExpenses" minOccurs="0"/>
-			<xsd:element ref="ols12:Schedule12EarnedDepletionRecaptureAmount" minOccurs="0"/>
 		</xsd:sequence>
 	</xsd:complexType>
 	
@@ -62,6 +61,5 @@ targetNamespace="http://www.cra-arc.gc.ca/enov/ol/interfaces/efile/partnership/o
 	<xsd:element name="Schedule12OtherDeductionsAmount" type="sdt:AmountType"/>
 	<xsd:element name="Schedule12ExpensesLineTotalAmount" type="sdt:AmountType"/>
 	<xsd:element name="Schedule12ForeignResourceIncomeAmount" type="sdt:AmountType"/>
-	<xsd:element name="Schedule12EarnedDepletionRecaptureAmount" type="sdt:AmountType"/>
 			
 </xsd:schema>

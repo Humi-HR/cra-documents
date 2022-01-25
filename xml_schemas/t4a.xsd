@@ -2,7 +2,6 @@
 
 <!--
 Description	T4A Return Complex and Element Types
-Last updated 	September 2020
 Version#:	1.16 (version #.yy)
 -->
 
@@ -78,6 +77,9 @@ Version#:	1.16 (version #.yy)
 					<xsd:field xpath="vtrn_ben_pens_splt_elg_amt"/>
 					<xsd:field xpath="alda_amt"/>
 					<xsd:field xpath="prov_trty_emrg_ben_amt"/>
+					<xsd:field xpath="repmt_covid_fncl_asstnc"/>
+					<xsd:field xpath="oas_lump_sum_pamt"/>
+					<xsd:field xpath="pst_dctrl_fshp_amt"/>
 				</xsd:unique>
 			</xsd:element>
 			<xsd:element name="ADD_INFO" type="T4AAdditionalInformationType" minOccurs="0">
@@ -173,6 +175,9 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="vtrn_ben_pens_splt_elg_amt" type="decimal11Type"/>
 			<xsd:element name="alda_amt" type="signedDecimal11Type"/>
 			<xsd:element name="prov_trty_emrg_ben_amt" type="decimal11Type"/>
+			<xsd:element name="repmt_covid_fncl_asstnc" type="decimal11Type"/>
+			<xsd:element name="oas_lump_sum_pamt" type="decimal11Type"/>
+			<xsd:element name="pst_dctrl_fshp_amt" type="decimal11Type"/>
 		</xsd:choice>
 	</xsd:group>
 	<xsd:complexType name="T4ASummaryType">

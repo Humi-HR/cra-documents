@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Last updated 	March 2019
--->
 <!-- edited with XMLSpy v2013 (http://www.altova.com) by  () -->
 <!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Marita Thuer (Bundesamt fuer Finanzen) -->
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:oecd:ties:stf:v2.2" targetNamespace="urn:oecd:ties:stf:v2.2" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0">
