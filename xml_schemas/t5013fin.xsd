@@ -89,6 +89,8 @@ Users of this schema:
 			<xsd:element ref="ols:AllocateRenouncedAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:ForeignPropertyAttachmentIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:JournalismTaxCreditsAttachmentIndicator" minOccurs="0"/>
+			<xsd:element ref="ols:FarmersCreditIndicator" minOccurs="0"/>
+			<xsd:element ref="ols:AirQualityCreditIndicator" minOccurs="0"/>
 			<!-- ADDITIONAL INFORMATION -->
 			<xsd:element ref="ols:InternationalFinancialReportingStandardsIndicator" minOccurs="0"/>
 			<xsd:element ref="ols:MultipleNomineeIndicator" minOccurs="0"/>
@@ -398,6 +400,20 @@ Users of this schema:
  		   </xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
+	<xsd:element name="FarmersCreditIndicator" type="ccms:OneTwoCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en"> 
+			Is the partnership allocating any return of fuel charge proceeds to farmers tax credits?
+ 		   </xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="AirQualityCreditIndicator" type="ccms:OneTwoCodeType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en"> 
+            Is the partnership allocating any air quality improvement tax credit?
+           </xsd:documentation>
+        </xsd:annotation>
+    </xsd:element>
 	<!--  ADDITIONAL INFORMATION  -->
 	<xsd:element name="InternationalFinancialReportingStandardsIndicator" type="ccms:OneTwoCodeType">
 		<xsd:annotation>
