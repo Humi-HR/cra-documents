@@ -196,9 +196,8 @@ Version#:	1.17 (version #.yy)
 191	Renounced Canadian Development Expense Amount	 				- not a multi-jurisdictional field
 192	Renounced Canadian Exploration Expense Assistance Amount	 		- not a multi-jurisdictional field
 193	Renounced Canadian Development Expense Assistance Amount	 		- not a multi-jurisdictional field
-194	Investment Tax Credit Renounced Canadian Exploration Expense Amount	 	- not a multi-jurisdictional field
-195	Investment Tax Credit Renounced Canadian Exploration Expense Interest Free 
-	Period Amount	 								- not a multi-jurisdictional field
+194	Mineral exploration tax credit (METC)	 	- not a multi-jurisdictional field
+195	Portion subject to an interest-free period (METC)		- not a multi-jurisdictional field
 196	Renounced Canadian Exploration Expense Interest Free Period Amount	 	- not a multi-jurisdictional field
 197	British Columbia Tax Credit Renounced Resource Expense Amount	 		- not a multi-jurisdictional field
 198	Saskatchewan Tax Credit Renounced Resource Expense Amount	 		- not a multi-jurisdictional field
@@ -237,8 +236,10 @@ Version#:	1.17 (version #.yy)
 234     Accelerated Canadian development expenses                                       - not a multi-jurisdictional field
 235     Accelerated Canadian oil and gas property expenses                              - not a multi-jurisdictional field
 236     Canadian journalism labour tax credit                                           - not a multi-jurisdictional field
-237	Farmer Fuel Charge Tax Credit	 						- Multi-jurisdictional field
-238	Ventilation Sysem Installation Tax Credit					- Multi-jurisdictional field
+237     Farmer Fuel Charge Tax Credit                 	                          	    - Multi-jurisdictional field
+238     Ventilation System Installation Tax Credit                                      - Multi-jurisdictional field
+239     Critical Mineral Exploration Tax Credit (CMETC)                                 - Multi-jurisdictional field
+240     Portion subject to an interest-free period (CMETC)                              - Multi-jurisdictional field
 
 			</xsd:documentation> 
 		</xsd:annotation>
