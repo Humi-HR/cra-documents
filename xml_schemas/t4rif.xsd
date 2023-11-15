@@ -31,6 +31,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="tx_pay_amt" type="decimal9Type" minOccurs="0"/>
 			<xsd:element name="mrrg_bkdn_tramt" type="decimal9Type" minOccurs="0"/>
 			<xsd:element name="rrif_alda_amt" type="signedDecimal11Type" minOccurs="0"/>
+			<xsd:element name="t4rif_cye_fmv_amt" type="signedDecimal11Type" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>
 	<xsd:complexType name="T4RIFSummaryType">

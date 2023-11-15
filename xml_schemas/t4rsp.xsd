@@ -34,6 +34,7 @@ Version#:	1.16 (version #.yy)
 			<xsd:element name="hbp_rrsp_wdrw_amt" type="decimal9Type" minOccurs="0"/>
 			<xsd:element name="mrrg_bkdn_tramt" type="decimal9Type" minOccurs="0"/>
 			<xsd:element name="rrsp_alda_amt" type="signedDecimal11Type" minOccurs="0"/>
+			<xsd:element name="t4rsp_cye_fmv_amt" type="signedDecimal11Type" minOccurs="0"/>
 		</xsd:all>
 	</xsd:complexType>
 	<xsd:complexType name="T4RSPSummaryType">
